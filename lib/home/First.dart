@@ -4,7 +4,9 @@ import 'NavBar.dart';
 class First extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
+    return Stack(
+      alignment: Alignment.topCenter,
+        children: [
       Image.asset('assets/background/Artboard 1.png'),
       FirstContent(),
     ]);
@@ -35,15 +37,20 @@ class BodyContent extends StatelessWidget {
       //padding: EdgeInsets.only(left: 100),
       //width: MediaQuery.of(context).size.width,
       child: Row(
-        //mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           LeftContent(),
           Container(
-            //width: 1000,
+            width: 1000,
+            height: 800,
+            margin: EdgeInsets.only(right: 10),
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage('assets/background/2210.png'),fit: BoxFit.cover)
+            ),
+            //width: 1200,
             //color: Colors.black.withOpacity(0.2),
-            child: Image.asset('assets/background/2210.png', alignment: Alignment.topRight,),
-            alignment: Alignment.topRight,
+            //child: Image.asset('',),
           ),
         ],
       ),
@@ -59,7 +66,7 @@ class LeftContent extends StatelessWidget {
       height: 410,
       //color: Colors.grey,
       width: 710,
-      margin: EdgeInsets.only(left: 175,bottom: 240),
+      margin: EdgeInsets.only(left: 175,bottom: 80),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
