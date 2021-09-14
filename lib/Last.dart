@@ -1,12 +1,15 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Last extends StatelessWidget {
+
+  final dataKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      key: dataKey,
       designSize: Size(1920, 1080),
       builder: () => Container(
           padding: EdgeInsets.only(left: 100.w),
@@ -52,6 +55,7 @@ class Last extends StatelessWidget {
                     Text(
                       'All Rights Reserved, Debbah bank © 2021',
                       style: TextStyle(
+                        backgroundColor: Colors.tealAccent,
                           fontSize: 31.sp,
                           fontFamily: 'Gilroy Medium',
                           color: Colors.white),

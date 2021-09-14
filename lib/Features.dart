@@ -27,7 +27,8 @@ class Features extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              Flexible(
+                flex: 1,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -65,10 +66,12 @@ class Features extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
+              Flexible(
+                flex: 1,
                 child: Image.asset('assets/background/1576.png'),
               ),
-              Container(
+              Flexible(
+                flex: 1,
                 child: Column(//
                   children: [
                     Column(

@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'NavBar.dart';
 
-class First extends StatelessWidget {
+class First extends StatelessWidget {  // hed l class fiha deux elements : Background w la premiere splash screen.
+
+  final dataKey = new GlobalKey();
+
   @override
   Widget build(BuildContext context) {
-    return Stack(alignment: Alignment.topCenter, children: [
+    return Stack(key: dataKey, alignment: Alignment.topCenter, children: [
       Image.asset('assets/background/Artboard 1.png'),
       FirstContent(),
     ]);
   }
 }
 
-class FirstContent extends StatelessWidget {
+class FirstContent extends StatelessWidget {  // La 1ere splash screen.
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +30,7 @@ class FirstContent extends StatelessWidget {
   }
 }
 
-class BodyContent extends StatelessWidget {
+class BodyContent extends StatelessWidget {  // Divided into 2 parts: Left and right content, Left fiha ghi ketba w right fiha l'image te3 tlfn.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

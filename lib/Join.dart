@@ -16,7 +16,7 @@ class Join extends StatelessWidget {
         //padding: EdgeInsets.symmetric(horizontal: 70),
         color: Color(0xFFE1E1E1),
         height: 476,
-        width: MediaQuery.of(context).size.width.w,
+        width: MediaQuery.of(context).size.width,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

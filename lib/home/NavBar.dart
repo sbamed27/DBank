@@ -1,10 +1,26 @@
+import '../About.dart';
+import '../Download.dart';
+import '../Features.dart';
+import '../Join.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../Last.dart';
+import 'First.dart';
 
 class NavBar extends StatelessWidget {
+
+  // hedou ki tsa9sini 3lihom njawbk ana.
+  static GlobalKey homeKey = First().dataKey;
+  static GlobalKey featuresKey = Features().dataKey;
+  static GlobalKey joinKey = Join().dataKey;
+  static GlobalKey downloadKey = Download().dataKey;
+  static GlobalKey aboutKey = About().dataKey;
+  static GlobalKey lastKey = Last().dataKey;
+
   @override
   Widget build(BuildContext context) {
+
     return ScreenUtilInit(
       designSize: Size(1920, 1080),
       builder: () => Container(
@@ -43,7 +59,7 @@ class NavBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   FlatButton(
-                      onPressed: () {},
+                      onPressed: () { /*Scrollable.ensureVisible(homeKey.currentContext);*/},
                       child: Text(
                         'Home',
                         style: TextStyle(
