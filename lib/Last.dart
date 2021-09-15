@@ -55,7 +55,6 @@ class Last extends StatelessWidget {
                     Text(
                       'All Rights Reserved, Debbah bank © 2021',
                       style: TextStyle(
-                        backgroundColor: Colors.tealAccent,
                           fontSize: 31.sp,
                           fontFamily: 'Gilroy Medium',
                           color: Colors.white),
