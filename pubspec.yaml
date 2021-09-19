@@ -54,11 +54,6 @@ flutter:
   assets:
     - assets/background/
     - assets/logo/
-    #- assets/logo/white (2).png
-    #- assets/logo/white (2)2x.png
-    #- assets/logo/white (2)@2x.png
-    #- assets/logo/white (32px).png
-    #- assets/logo/white (32px)@2x.png
     - assets/phone/background/
     - assets/phone/logo/
   # An image asset can refer to one or more resolution-specific "variants", see

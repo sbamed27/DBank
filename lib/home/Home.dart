@@ -1,4 +1,5 @@
 import 'package:debbah_bank_website/icons_dart_files/d_bank_icons.dart';
+import 'package:debbah_bank_website/phone/create_acc/CreateAcc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../MyResponsive.dart';
@@ -25,33 +26,29 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     print('${MediaQuery.of(context).size.width}');
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: MyResponsive(
-        desktop: SingleChildScrollView(
-          child: Column(
-            children: [
-              First(),
-              SizedBox(height: 71),
-              Features(),
-              SizedBox(height: 78),
-              Join(),
-              SizedBox(height: 86),
-              Download(),
-              SizedBox(height: 98),
-              About(),
-              Last(),
-            ],
+    return MyResponsive(
+      desktop: Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+            child: Column(
+              children: [
+                First(),
+                SizedBox(height: 71),
+                Features(),
+                SizedBox(height: 78),
+                Join(),
+                SizedBox(height: 86),
+                Download(),
+                SizedBox(height: 98),
+                About(),
+                Last(),
+              ],
+            ),
           ),
-        ),
-        phone: HomePhone(),
       ),
-      /*drawer: MyResponsive.isPhone(context) ? Drawer(
-        child: Center(
-          child: ,
-        ),
-      ),*/
-    );
+      phone: Scaffold(
+        body: /*HomePhone(),*/CreateAcc(),
+      ),);
   }
 }
 
@@ -62,14 +59,16 @@ class HomePhone extends StatelessWidget {
 
     // TODO: implement build
     return ScreenUtilInit(
-      designSize: Size(375, 760),
+      designSize: Size(375, 768),
       builder: () => ListView(
         children: [
           Container(
             decoration: BoxDecoration(
+              color: Colors.tealAccent,
                 image: DecorationImage(
-                    image: AssetImage('assets/background/Artboard 1.png'),
-                    fit: BoxFit.cover)),
+              image: AssetImage('assets/phone/background/Artboard 1.png'),
+              fit: BoxFit.cover,
+            )),
             child: Column(
               children: [
                 Container(
@@ -121,24 +120,27 @@ class HomePhone extends StatelessWidget {
                                       fontFamily: 'Gilroy Medium'),
                                 ),
                               ),
-                              TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Get started',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 6.sp,
-                                      fontFamily: 'Gilroy Light'),
-                                ),
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      Color(0xFF925D5D)),
-                                  shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                          side: BorderSide(color: Colors.red))),
+                              SizedBox(
+                                height: 20,
+                                child: TextButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Get started',
+                                    style: TextStyle(
+                                        color: Color(0xFF0E0E0E),
+                                        fontSize: 7.sp,
+                                        fontFamily: 'Gilroy Light'),
+                                  ),
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all(Colors.white),
+                                    shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      //side: BorderSide(color: Colors.red),
+                                    )),
+                                  ),
                                 ),
                               )
                             ],
@@ -148,17 +150,41 @@ class HomePhone extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(height: 31),
                 Column(
                   children: [
-                    Text('A global bank\nwith a local feel'),
-                    Text('e-bank made by Algerian students'),
+                    Text(
+                      'A global bank',
+                      style: TextStyle(
+                          fontSize: 28.sp,
+                          fontFamily: 'Gilroy Bold',
+                          color: Colors.white),
+                    ),
+                    Text(
+                      'with a local feel',
+                      style: TextStyle(
+                          fontSize: 25.5.sp,
+                          fontFamily: 'Gilroy Bold',
+                          color: Colors.white),
+                    ),
+                    Text(
+                      'e-bank made by Algerian students',
+                      style: TextStyle(
+                          fontSize: 12.sp,
+                          fontFamily: 'Gilroy Medium',
+                          color: Colors.white),
+                    ),
                     TextButton.icon(
                         onPressed: () {},
-                        icon: Icon(
-                          Icons.play_circle_outline_rounded,
-                          size: 18.08.sp,
-                        ),
-                        label: Text('About Us'))
+                        icon: Icon(Icons.play_circle_outline_rounded,
+                            size: 18.08.sp, color: Colors.white),
+                        label: Text(
+                          'About Us',
+                          style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: 'Gilroy Medium',
+                              color: Colors.white),
+                        ))
                   ],
                 ),
                 FittedBox(
@@ -196,7 +222,7 @@ class HomePhone extends StatelessWidget {
                     children: [
                       Container(
                         width: 100,
-                        height: 98,
+                        height: 102,
                         decoration: BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.circular(51)
@@ -208,6 +234,7 @@ class HomePhone extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(height: 15,),
                       Text(
                         'Everywhere access',
                         style: TextStyle(
@@ -228,7 +255,7 @@ class HomePhone extends StatelessWidget {
                     children: [
                       Container(
                         width: 100,
-                        height: 98,
+                        height: 102,
                         decoration: BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.circular(51)
@@ -240,6 +267,7 @@ class HomePhone extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(height: 15,),
                       Text(
                         '24 Hours support',
                         style: TextStyle(
@@ -258,7 +286,7 @@ class HomePhone extends StatelessWidget {
                     children: [
                       Container(
                         width: 100,
-                        height: 98,
+                        height: 102,
                         decoration: BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.circular(51)
@@ -270,6 +298,7 @@ class HomePhone extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(height: 15,),
                       Text(
                         'Free download',
                         style: TextStyle(
@@ -288,7 +317,7 @@ class HomePhone extends StatelessWidget {
                     children: [
                       Container(
                         width: 100,
-                        height: 98,
+                        height: 102,
                         decoration: BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.circular(51)
@@ -300,6 +329,7 @@ class HomePhone extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(height: 15,),
                       Text(
                         'High security',
                         style: TextStyle(
@@ -316,11 +346,10 @@ class HomePhone extends StatelessWidget {
               )
             ],
           ), // Features.
-          SizedBox(height: 60),
-          Container(
-              // Join
+          SizedBox(height: 70),
+          Container( // Join
               color: Color(0xFFE1E1E1),
-              height: 236,
+              height: 263,
               width: MediaQuery.of(context).size.width,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -625,9 +654,9 @@ class HomePhone extends StatelessWidget {
                           color: Color(0xFF590D0D)),
                     ),
                     Container(
-                      width: 130.w,
+                      width: 144.w,
                       child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             IconButton(
                                 onPressed: () {},
