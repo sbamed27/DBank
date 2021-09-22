@@ -1,5 +1,7 @@
 import 'package:debbah_bank_website/icons_dart_files/d_bank_icons.dart';
 import 'package:debbah_bank_website/phone/create_acc/CreateAcc.dart';
+import 'package:debbah_bank_website/phone/login/LoginScreen.dart';
+import 'package:debbah_bank_website/phone/login/LoginWithNumber.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../MyResponsive.dart';
@@ -30,25 +32,104 @@ class Home extends StatelessWidget {
       desktop: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-            child: Column(
-              children: [
-                First(),
-                SizedBox(height: 71),
-                Features(),
-                SizedBox(height: 78),
-                Join(),
-                SizedBox(height: 86),
-                Download(),
-                SizedBox(height: 98),
-                About(),
-                Last(),
-              ],
-            ),
+          child: Column(
+            children: [
+              First(),
+              SizedBox(height: 71),
+              Features(),
+              SizedBox(height: 78),
+              Join(),
+              SizedBox(height: 86),
+              Download(),
+              SizedBox(height: 98),
+              About(),
+              Last(),
+            ],
           ),
+        ),
       ),
       phone: Scaffold(
-        body: /*HomePhone(),*/CreateAcc(),
-      ),);
+        drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              DrawerHeader(
+                    //Image.asset('assets/phone/logo/gradient red-black.png'),
+                child: Text('DEBBAH\nBANK.',
+                    style: TextStyle(
+                      fontFamily: 'Gilroy Bold',
+                      fontSize: 17.sp,
+                      color: Color(0xFF441211),
+                    )),
+              ),
+              //Divider(),
+              ListTile(
+                leading: SvgPicture.asset('assets/phone/logo/home.svg'),
+                title: Text(
+                  'Home',
+                  style: TextStyle(
+                    fontSize: 24.sp,
+                    fontFamily: 'Gilroy Medium',
+                    color: Color(0xFF212121),
+                  ),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text(
+                  'Features',
+                  style: TextStyle(
+                    fontSize: 24.sp,
+                    fontFamily: 'Gilroy Medium',
+                    color: Color(0xFF212121),
+                  ),
+                ),
+                leading: SvgPicture.asset('assets/phone/logo/jigsaw.svg'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text(
+                  'About us',
+                  style: TextStyle(
+                    fontSize: 24.sp,
+                    fontFamily: 'Gilroy Medium',
+                    color: Color(0xFF212121),
+                  ),
+                ),
+                leading: SvgPicture.asset('assets/phone/logo/file.svg'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text(
+                  'Support',
+                  style: TextStyle(
+                    fontSize: 24.sp,
+                    fontFamily: 'Gilroy Medium',
+                    color: Color(0xFF212121),
+                  ),
+                ),
+                leading: SvgPicture.asset('assets/phone/logo/support (1).svg'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text(
+                  'English',
+                  style: TextStyle(
+                    fontSize: 24.sp,
+                    fontFamily: 'Gilroy Medium',
+                    color: Color(0xFF212121),
+                  ),
+                ),
+                leading:
+                    SvgPicture.asset('assets/phone/logo/united-kingdom.svg'),
+                onTap: () {},
+              ),
+            ],
+          ),
+        ),
+        resizeToAvoidBottomInset: false,
+        body: HomePhone() /*LoginWithNumber()*/,
+      ),
+    );
   }
 }
 
@@ -64,11 +145,11 @@ class HomePhone extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Colors.tealAccent,
+                color: Colors.tealAccent,
                 image: DecorationImage(
-              image: AssetImage('assets/phone/background/Artboard 1.png'),
-              fit: BoxFit.cover,
-            )),
+                  image: AssetImage('assets/phone/background/Artboard 1.png'),
+                  fit: BoxFit.cover,
+                )),
             child: Column(
               children: [
                 Container(
@@ -123,7 +204,9 @@ class HomePhone extends StatelessWidget {
                               SizedBox(
                                 height: 20,
                                 child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, 'Get started');
+                                  },
                                   child: Text(
                                     'Get started',
                                     style: TextStyle(
@@ -138,7 +221,6 @@ class HomePhone extends StatelessWidget {
                                             RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10.0),
-                                      //side: BorderSide(color: Colors.red),
                                     )),
                                   ),
                                 ),
@@ -234,7 +316,9 @@ class HomePhone extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15,),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Text(
                         'Everywhere access',
                         style: TextStyle(
@@ -267,7 +351,9 @@ class HomePhone extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15,),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Text(
                         '24 Hours support',
                         style: TextStyle(
@@ -298,7 +384,9 @@ class HomePhone extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15,),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Text(
                         'Free download',
                         style: TextStyle(
@@ -329,7 +417,9 @@ class HomePhone extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15,),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Text(
                         'High security',
                         style: TextStyle(
@@ -347,7 +437,8 @@ class HomePhone extends StatelessWidget {
             ],
           ), // Features.
           SizedBox(height: 70),
-          Container( // Join
+          Container(
+              // Join
               color: Color(0xFFE1E1E1),
               height: 263,
               width: MediaQuery.of(context).size.width,

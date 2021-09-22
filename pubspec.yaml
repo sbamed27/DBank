@@ -101,5 +101,8 @@ flutter:
     - family: Gilroy Thin
       fonts:
         - asset: assets/fonts/gilroy_font/Gilroy-Thin.ttf
+    - family: Tw Cen MT
+      fonts:
+        - asset: assets/phone/fonts/Tw Cen MT.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

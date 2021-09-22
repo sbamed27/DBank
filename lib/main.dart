@@ -1,3 +1,4 @@
+import 'package:debbah_bank_website/phone/create_acc/CreateAcc.dart';
 import 'package:flutter/material.dart';
 import 'home/Home.dart';
 
@@ -10,6 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Debbah Bank',
       debugShowCheckedModeBanner: false,
+      routes: {
+        'Get started': (context) => CreateAcc(),
+        'Home': (context) => Home(),
+      },
       home: Home(),
     );
   }
