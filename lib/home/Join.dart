@@ -9,10 +9,8 @@ class Join extends StatelessWidget {
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
 
-    return ScreenUtilInit(
-      key: dataKey,
-      designSize: Size(1920,1080),
-      builder: () => Container(
+    return Container(
+        key: dataKey,
         //padding: EdgeInsets.symmetric(horizontal: 70),
         color: Color(0xFFE1E1E1),
         height: 476,
@@ -93,7 +91,6 @@ class Join extends StatelessWidget {
             )
           ],
         ),
-      ),
     );
   }
 }

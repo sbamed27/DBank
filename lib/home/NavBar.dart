@@ -1,15 +1,14 @@
-import '../About.dart';
-import '../Download.dart';
-import '../Features.dart';
-import '../Join.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../Last.dart';
+import 'About.dart';
+import 'Download.dart';
+import 'Features.dart';
 import 'First.dart';
+import 'Join.dart';
+import 'Last.dart';
 
 class NavBar extends StatelessWidget {
-
   // hedou ki tsa9sini 3lihom njawbk ana.
   static GlobalKey homeKey = First().dataKey;
   static GlobalKey featuresKey = Features().dataKey;
@@ -20,17 +19,24 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return ScreenUtilInit(
-      designSize: Size(1920, 1080),
-      builder: () => Container(
-        width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.symmetric(horizontal: 100.w),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              //margin: EdgeInsets.only(top: 25),
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.only(top: 10),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          TextButton.icon(
+              icon: Image.asset('assets/logo/white (2).png'),
+              onPressed: () {},
+              label: Text(
+                'DEBBAH\nBANK.',
+                style: TextStyle(
+                    fontFamily: 'Gilroy Bold',
+                    fontSize: 55.sp,
+                    color: Colors.white),
+              )),
+          /*Container(
               child: Row(
                 children: [
                   Container(
@@ -51,58 +57,62 @@ class NavBar extends StatelessWidget {
                       )),
                 ],
               ),
-            ),
-            SizedBox(width: 110.w),
-            Container(
-              width: 704.5.w,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  FlatButton(
-                      onPressed: () { /*Scrollable.ensureVisible(homeKey.currentContext);*/},
-                      child: Text(
-                        'Home',
+            )*/
+          //SizedBox(width: 110.w),
+          Container(
+            width: 704.5.w,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border(bottom: BorderSide(color: Colors.white))),
+                  child: TextButton(
+                    onPressed: () {
+                      /*Scrollable.ensureVisible(homeKey.currentContext);*/
+                    },
+                    child: Text(
+                      'Home',
+                      style: TextStyle(
+                          fontFamily: 'Gilroy Medium',
+                          fontSize: 31.sp,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+                //SizedBox(width: 80),
+                TextButton(
+                    onPressed: () {},
+                    child: Text('Features',
                         style: TextStyle(
                             fontFamily: 'Gilroy Medium',
                             fontSize: 31.sp,
-                            color: Colors.white),
-                      ),
-                    shape: Border(bottom: BorderSide(
-                      color: Colors.white,
-                    )),
-                  ),
-                  //SizedBox(width: 80),
-                  FlatButton(
-                      onPressed: () {},
-                      child: Text('Features',
-                          style: TextStyle(
-                              fontFamily: 'Gilroy Medium',
-                              fontSize: 31.sp,
-                              color: Colors.white))),
-                  //SizedBox(width: 80),
-                  FlatButton(
-                      onPressed: () {},
-                      child: Text('About Us',
-                          style: TextStyle(
-                              fontFamily: 'Gilroy Medium',
-                              fontSize: 31.sp,
-                              color: Colors.white))),
-                  //SizedBox(width: 80),
-                  FlatButton(
-                      onPressed: () {},
-                      child: Text('Support',
-                          style: TextStyle(
-                              fontFamily: 'Gilroy Medium',
-                              fontSize: 31.sp,
-                              color: Colors.white))),
-                ],
-              ),
+                            color: Colors.white))),
+                //SizedBox(width: 80),
+                TextButton(
+                    onPressed: () {},
+                    child: Text('About Us',
+                        style: TextStyle(
+                            fontFamily: 'Gilroy Medium',
+                            fontSize: 31.sp,
+                            color: Colors.white))),
+                //SizedBox(width: 80),
+                TextButton(
+                    onPressed: () {},
+                    child: Text('Support',
+                        style: TextStyle(
+                            fontFamily: 'Gilroy Medium',
+                            fontSize: 31.sp,
+                            color: Colors.white))),
+              ],
             ),
-            SizedBox(width: 170.w),
-            Row(
+          ),
+          //SizedBox(width: 150.w),
+          Container(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                FlatButton(
+                TextButton(
                     onPressed: () {},
                     child: Text(
                       'Log in',
@@ -111,10 +121,10 @@ class NavBar extends StatelessWidget {
                           fontSize: 31.sp,
                           color: Colors.white),
                     )),
-                SizedBox(width: 20.w),
+                SizedBox(width: 18.w),
                 SizedBox(
                   height: 75,
-                  width: 200.w,
+                  //width: 200.w,
                   child: ElevatedButton(
                     onPressed: () {},
                     child: Text(
@@ -134,9 +144,9 @@ class NavBar extends StatelessWidget {
                   ),
                 ),
               ],
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

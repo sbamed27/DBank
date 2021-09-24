@@ -8,10 +8,8 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      key: dataKey,
-      designSize: Size(1920,1080),
-      builder: () => Container(
+    return Container(
+        key: dataKey,
         color: Color(0xFFE1E1E1),
         height: 474,
         width: MediaQuery.of(context).size.width,
@@ -230,7 +228,6 @@ class About extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }

@@ -19,9 +19,9 @@ class _CreateAccState extends State<CreateAcc> {
   Widget build(BuildContext context) {
     print(
         '${MediaQuery.of(context).size.height} ${MediaQuery.of(context).size.width}');
-    return ScreenUtilInit(
-      designSize: Size(393, 760),
-      builder: () => SafeArea(
+    return Scaffold(
+      drawer: MyDrawer(),
+      body: SafeArea(
         child: Container(
           child: Column(
             children: [
@@ -35,7 +35,7 @@ class _CreateAccState extends State<CreateAcc> {
                       padding: EdgeInsets.symmetric(
                         vertical: 10,
                       ),
-                      child: SvgPicture.asset(redMenuSvg),
+                      child: IconButton(onPressed: () {Scaffold.of(context).openDrawer();}, icon: SvgPicture.asset(redMenuSvg)),
                     ),
                     SizedBox(
                       width: 0.2.sw,
@@ -51,7 +51,9 @@ class _CreateAccState extends State<CreateAcc> {
                                 'assets/phone/logo/gradient red-black (2).png'),
                           ),
                           TextButton(
-                              onPressed: () {Navigator.pushNamed(context, 'Home');},
+                              onPressed: () {
+                                Navigator.pushNamed(context, 'Home');
+                              },
                               child: Text(
                                 'DEBBAH\nBANK.',
                                 style: TextStyle(
@@ -91,16 +93,16 @@ class _CreateAccState extends State<CreateAcc> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 1.w),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(41),
-                                      border:
-                                          Border.all(color: Color(0xFF720707))),
-                                  width: 89.w,
-                                  child: MyDropDownButton(),
-                                ),
+                                /*Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 1.w),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(41),
+                                        border:
+                                            Border.all(color: Color(0xFF720707))),
+                                    width: 89.w,
+                                    child: MyDropDownButton(),
+                                  ),*/
                                 Container(
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(41),
@@ -161,7 +163,9 @@ class _CreateAccState extends State<CreateAcc> {
                                 )
                               ],
                             ),
-                            SizedBox(height: 13,),
+                            SizedBox(
+                              height: 13,
+                            ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -197,16 +201,20 @@ class _CreateAccState extends State<CreateAcc> {
                                             isChecked = value!;
                                           });
                                         }),
-                                    Text('Show password', style: TextStyle(
-                                      fontSize: 12.sp,
-                                      fontFamily: 'Gilroy Medium',
-                                      color: Color(0xFF4E4E4E)
-                                    ),),
+                                    Text(
+                                      'Show password',
+                                      style: TextStyle(
+                                          fontSize: 12.sp,
+                                          fontFamily: 'Gilroy Medium',
+                                          color: Color(0xFF4E4E4E)),
+                                    ),
                                   ],
                                 ),
                               ],
                             ),
-                            SizedBox(height: 24,),
+                            SizedBox(
+                              height: 24,
+                            ),
                             Column(
                               children: [
                                 Container(
@@ -225,16 +233,16 @@ class _CreateAccState extends State<CreateAcc> {
                                       shape: MaterialStateProperty.all<
                                               RoundedRectangleBorder>(
                                           RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(18.0),
+                                        borderRadius: BorderRadius.circular(18.0),
                                       )),
-                                      backgroundColor:
-                                          MaterialStateProperty.all(
-                                              Color(0xFF720707)),
+                                      backgroundColor: MaterialStateProperty.all(
+                                          Color(0xFF720707)),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 5,),
+                                SizedBox(
+                                  height: 5,
+                                ),
                                 RichText(
                                     text: TextSpan(
                                         style: TextStyle(
@@ -259,9 +267,9 @@ class _CreateAccState extends State<CreateAcc> {
                                       TextSpan(
                                         text: ' and you\'ve read our',
                                         /*style: TextStyle(
-                                            fontSize: 9.5,
-                                            fontFamily: 'Gilroy Medium',
-                                            color: Color(0xFF686868)),*/
+                                              fontSize: 9.5,
+                                              fontFamily: 'Gilroy Medium',
+                                              color: Color(0xFF686868)),*/
                                       ),
                                       TextSpan(
                                           text: ' privacy policy',
@@ -291,7 +299,7 @@ class _CreateAccState extends State<CreateAcc> {
     );
   }
 }
-
+/*
 class MyItem {
   Image myFlag;
   String stateCode;
@@ -342,3 +350,4 @@ class _MyDropDownButtonState extends State<MyDropDownButton> {
     );
   }
 }
+*/

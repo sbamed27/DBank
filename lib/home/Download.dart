@@ -9,13 +9,12 @@ class Download extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      key: dataKey,
-      designSize: Size(1920,1080),
-      builder: () => Row(
+    return Row(
+        key: dataKey,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
-            width: (MediaQuery.of(context).size.width / 2).w,
+            width: MediaQuery.of(context).size.width.w / 2,
             padding: EdgeInsets.only(right: 70.w),
             child: Stack(alignment: Alignment.centerRight, children: [
               Container(
@@ -39,8 +38,9 @@ class Download extends StatelessWidget {
             ]),
           ),
           Container(
+            //alignment: Alignment.centerRight,
             width: 710.w,
-            height: 450,
+            height: 460,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -66,7 +66,7 @@ class Download extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: (MediaQuery.of(context).size.width / 2).w,
+                  //width: MediaQuery.of(context).size.width.w / 2,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -95,9 +95,6 @@ class Download extends StatelessWidget {
                           ],
                         ),
                         style: ButtonStyle(
-                            /*padding: MaterialStateProperty.all<EdgeInsets>(
-                                EdgeInsets.symmetric(
-                                    horizontal: 30.w, vertical: 15)),*/
                             backgroundColor:
                                 MaterialStateProperty.all(Color(0xFF590D0D))),
                       ),
@@ -126,9 +123,6 @@ class Download extends StatelessWidget {
                           ],
                         ),
                         style: ButtonStyle(
-                            /*padding: MaterialStateProperty.all<EdgeInsets>(
-                                EdgeInsets.symmetric(
-                                    horizontal: 30.w, vertical: 15)),*/
                             backgroundColor:
                                 MaterialStateProperty.all(Color(0xFF590D0D))),
                       ),
@@ -139,7 +133,6 @@ class Download extends StatelessWidget {
             ),
           )
         ],
-      ),
     );
   }
 }
