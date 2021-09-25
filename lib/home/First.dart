@@ -7,13 +7,6 @@ class First extends StatelessWidget {
   final dataKey = new GlobalKey();
 
   @override
-  /*Widget build(BuildContext context) {
-    return Stack(key: dataKey, alignment: Alignment.topCenter, children: [
-      Image.asset('assets/background/Artboard 1.png'),
-      FirstContent(),
-    ]);
-  }*/
-
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -35,7 +28,7 @@ class FirstContent extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
-          MediaQuery.of(context).size.width > 950 ? NavBar() : TabletNavBar(),
+          MediaQuery.of(context).size.width > 900 ? NavBar() : TabletNavBar(),
           BodyContent(),
         ],
       ),
@@ -122,70 +115,74 @@ class LeftContent extends StatelessWidget {
 class TabletNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(horizontal: 10.w),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: SvgPicture.asset('assets/phone/logo/menu_white_24dp.svg')),
-          Row(
+    return Builder(
+      builder: (context) {
+        return Container(
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.symmetric(horizontal: 10.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/logo/white (32px)@2x.png'),
+              IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  icon: SvgPicture.asset('assets/phone/logo/menu_white_24dp.svg')),
+              Row(
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/logo/white (32px)@2x.png'),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              Text(
-                'DEBBAH\nBANK.',
-                style: TextStyle(
-                    fontFamily: 'Gilroy Bold',
-                    fontSize: 32.sp,
-                    color: Colors.white),
-              )
-            ],
-          ),
-          Row(
-            children: [
-              TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Log in',
+                  Text(
+                    'DEBBAH\nBANK.',
                     style: TextStyle(
-                        fontFamily: 'Gilroy Medium',
-                        fontSize: 24.sp,
+                        fontFamily: 'Gilroy Bold',
+                        fontSize: 32.sp,
                         color: Colors.white),
-                  )),
-              SizedBox(width: 18.w),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text(
-                  'Get started',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color(0xFF0E0E0E),
-                      fontSize: 26.sp,
-                      fontFamily: 'Gilroy Light'),
-                ),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Log in',
+                        style: TextStyle(
+                            fontFamily: 'Gilroy Medium',
+                            fontSize: 24.sp,
+                            color: Colors.white),
+                      )),
+                  SizedBox(width: 18.w),
+                  ElevatedButton(
+                    onPressed: () {Navigator.of(context).pushNamed('Get started');},
+                    child: Text(
+                      'Get started',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Color(0xFF0E0E0E),
+                          fontSize: 26.sp,
+                          fontFamily: 'Gilroy Light'),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        );
+      }
     );
   }
 }

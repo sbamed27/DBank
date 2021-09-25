@@ -7,10 +7,10 @@ class MyResponsive extends StatefulWidget {
   const MyResponsive({required this.desktop, required this.phone});
 
   static bool isDesktop(BuildContext context) =>
-      MediaQuery.of(context).size.width > 700;
+      MediaQuery.of(context).size.width > 650;
 
   static bool isPhone(BuildContext context) =>
-      MediaQuery.of(context).size.width <= 700;
+      MediaQuery.of(context).size.width <= 650;
 
   @override
   _MyResponsiveState createState() => _MyResponsiveState();

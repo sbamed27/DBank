@@ -3,22 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreenEmailPhone extends StatefulWidget {
   static String redMenuSvg = 'assets/phone/logo/menu_red_24dp.svg';
   static bool isChecked = false;
   static bool pwVisible = false;
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginScreenEmailPhone> createState() => _LoginScreenEmailPhoneState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenEmailPhoneState extends State<LoginScreenEmailPhone> {
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: Size(MediaQuery.of(context).size.width,
-          MediaQuery.of(context).size.height),
-      builder: () => SafeArea(
+    return Scaffold(
+      body: SafeArea(
         child: Column(
           children: [
             Container(
@@ -28,11 +26,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 10
-                    ),
-                    child: SvgPicture.asset(LoginScreen.redMenuSvg),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    child: SvgPicture.asset(LoginScreenEmailPhone.redMenuSvg),
                   ),
                   SizedBox(
                     width: 0.1.sw,
@@ -48,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               'assets/phone/logo/gradient red-black (2).png'),
                         ),
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () {Navigator.pushNamed(context, 'Home');},
                             child: Text(
                               'DEBBAH\nBANK.',
                               style: TextStyle(
@@ -81,8 +76,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 22,
                   ),
                   Container(
+                    alignment: Alignment.center,
                     padding: EdgeInsets.symmetric(horizontal: 17.w),
-                    height: 60.h,
+                    height: 60,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(41),
                         border: Border.all(color: Color(0xFF720707))),
@@ -102,26 +98,27 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 30,
                   ),
                   Container(
+                    alignment: Alignment.center,
                     padding: EdgeInsets.only(left: 17.w),
-                    height: 60.h,
+                    height: 60,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(41),
                         border: Border.all(color: Color(0xFF720707))),
                     child: TextFormField(
-                      obscureText: !LoginScreen.isChecked,
+                      obscureText: !LoginScreenEmailPhone.isChecked,
                       decoration: InputDecoration(
                           suffixIcon: GestureDetector(
-                            child: LoginScreen.pwVisible
+                            child: LoginScreenEmailPhone.pwVisible
                                 ? Icon(Icons.visibility_off)
                                 : Icon(Icons.visibility),
                             onTap: () {
                               setState(() {
-                                if (LoginScreen.isChecked == false) {
-                                  LoginScreen.pwVisible = true;
-                                  LoginScreen.isChecked = true;
+                                if (LoginScreenEmailPhone.isChecked == false) {
+                                  LoginScreenEmailPhone.pwVisible = true;
+                                  LoginScreenEmailPhone.isChecked = true;
                                 } else {
-                                  LoginScreen.isChecked = false;
-                                  LoginScreen.pwVisible = false;
+                                  LoginScreenEmailPhone.isChecked = false;
+                                  LoginScreenEmailPhone.pwVisible = false;
                                 }
                               });
                             },
@@ -206,7 +203,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Color(0xFF720707),
                           fontSize: 23.sp),
                     ),
-                    onPressed: () {},
+                    onPressed: () {Navigator.pushNamed(context, 'Login with number');},
                   ),
                   RichText(
                       text: TextSpan(

@@ -4,19 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import '../email/LoginScreenEmailPhone.dart';
 
-import 'LoginScreenPhone.dart';
-
-class LoginWithNumber extends StatefulWidget {
+class LoginWithNumberPhone extends StatefulWidget {
   static String redMenuSvg = 'assets/phone/logo/menu_red_24dp.svg';
   static bool isChecked = false;
   static bool pwVisible = false;
 
   @override
-  State<LoginWithNumber> createState() => _LoginWithNumberState();
+  State<LoginWithNumberPhone> createState() => _LoginWithNumberPhoneState();
 }
 
-class _LoginWithNumberState extends State<LoginWithNumber> {
+class _LoginWithNumberPhoneState extends State<LoginWithNumberPhone> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +34,7 @@ class _LoginWithNumberState extends State<LoginWithNumber> {
                       onPressed: () {
                         Scaffold.of(context).openDrawer();
                       },
-                      icon: SvgPicture.asset(LoginWithNumber.redMenuSvg),
+                      icon: SvgPicture.asset(LoginWithNumberPhone.redMenuSvg),
                     )),
                 SizedBox(
                   width: 0.1.sw,
@@ -107,70 +106,32 @@ class _LoginWithNumberState extends State<LoginWithNumber> {
                       numPhoneController.text = value!.number!;
                       codeCountryController.text = value.countryCode!;
                     },*/
-                )
-                /*
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 1.w),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(41),
-                            border: Border.all(color: Color(0xFF720707))),
-                        width: 99.w,
-                        height: 60,
-                        alignment: Alignment.center,
-                        child: MyDropDownButton(),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(left: 17.w),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(41),
-                            border: Border.all(color: Color(0xFF720707))),
-                        height: 60,
-                        width: 200.w,
-                        //  (MediaQuery.of(context).size.width / 3).w,
-                        child: TextFormField(
-                          keyboardType: TextInputType.phone,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              labelText: 'Phone number',
-                              labelStyle: TextStyle(
-                                  fontFamily: 'Gilroy Medium',
-                                  color: Color(0xFF4E4E4E))),
-                          validator: (value) {
-                            if (value == null || value.isEmpty)
-                              return 'Plz ...';
-                          },
-                        ),
-                      ),
-                    ],
-                  ),*/
-                ,
+                ),
                 SizedBox(
                   height: 30,
                 ),
                 Container(
+                  alignment: Alignment.center,
                   padding: EdgeInsets.only(left: 17.w),
                   height: 60.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(41),
                       border: Border.all(color: Color(0xFF720707))),
                   child: TextFormField(
-                    obscureText: !LoginScreen.isChecked,
+                    obscureText: !LoginScreenEmailPhone.isChecked,
                     decoration: InputDecoration(
                         suffixIcon: GestureDetector(
-                          child: LoginScreen.pwVisible
+                          child: LoginScreenEmailPhone.pwVisible
                               ? Icon(Icons.visibility_off)
                               : Icon(Icons.visibility),
                           onTap: () {
                             setState(() {
-                              if (LoginScreen.isChecked == false) {
-                                LoginScreen.pwVisible = true;
-                                LoginScreen.isChecked = true;
+                              if (LoginScreenEmailPhone.isChecked == false) {
+                                LoginScreenEmailPhone.pwVisible = true;
+                                LoginScreenEmailPhone.isChecked = true;
                               } else {
-                                LoginScreen.isChecked = false;
-                                LoginScreen.pwVisible = false;
+                                LoginScreenEmailPhone.isChecked = false;
+                                LoginScreenEmailPhone.pwVisible = false;
                               }
                             });
                           },
@@ -252,7 +213,7 @@ class _LoginWithNumberState extends State<LoginWithNumber> {
                         color: Color(0xFF720707),
                         fontSize: 23.sp),
                   ),
-                  onPressed: () {},
+                  onPressed: () {Navigator.pushNamed(context, 'Login');},
                 ),
                 RichText(
                     text: TextSpan(

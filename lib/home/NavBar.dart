@@ -113,7 +113,7 @@ class NavBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {Navigator.pushNamed(context, 'Login');},
                     child: Text(
                       'Log in',
                       style: TextStyle(
@@ -126,7 +126,7 @@ class NavBar extends StatelessWidget {
                   height: 75,
                   //width: 200.w,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {Navigator.of(context).pushNamed('Get started');},
                     child: Text(
                       'Get started',
                       style: TextStyle(
