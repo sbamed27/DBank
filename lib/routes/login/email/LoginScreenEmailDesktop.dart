@@ -15,7 +15,7 @@ class LoginScreenEmailDesktop extends StatelessWidget {
                 fit: BoxFit.cover)),
         child: Center(
           child: Container(
-            width: 474.w,
+            width: 500.w,
             height: 694,
             color: Colors.white,
             child: Center(
@@ -62,83 +62,98 @@ class LoginScreenEmailDesktop extends StatelessWidget {
                         SizedBox(
                           height: 24,
                         ),
-                        Container(
-                          width: 335.w,
-                          height: 60,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(41),
-                            border: Border.all(
-                              color: Color(0xFF720707),
-                            )
-                          ),
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              prefixIcon: Icon(Icons.email_outlined),
-                              labelText: 'Email',
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: 335.w,
-                          height: 60,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(41),
-                              border: Border.all(
-                                color: Color(0xFF720707),
-                              )
-                          ),
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              prefixIcon: Icon(Icons.lock_open_outlined),
-                              labelText: 'Password',
-                              suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 7,
-                        ),
-                        Container(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            child: Text('Forgot password ?', style: TextStyle(
-                              fontSize: 18.sp,
-                              color: Color(0xFF4E4E4E),
-                            ),),
-                            onPressed: () {},
-                          ),
-                        ),
-                        SizedBox(
-                          height: 19,
-                        ),
-                        Container(
-                          width: 243.w,
-                          height: 47,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Color(0xFF720707),),
-                            ),
-                            onPressed: () {},
-                            child: Text(
-                              'Login',
-                              style: TextStyle(
-                                fontSize: 21.sp,
-                                fontFamily: 'Gilroy Bold',
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
+                        Builder(
+                            builder: (context) => Form(
+                                    child: Column(
+                                  children: [
+                                    Container(
+                                      width: 335.w,
+                                      height: 60,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(41),
+                                          border: Border.all(
+                                            color: Color(0xFF720707),
+                                          )),
+                                      child: TextFormField(
+                                        decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          prefixIcon:
+                                              Icon(Icons.email_outlined),
+                                          labelText: 'Email',
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                    Container(
+                                      alignment: Alignment.center,
+                                      width: 335.w,
+                                      height: 60,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(41),
+                                          border: Border.all(
+                                            color: Color(0xFF720707),
+                                          )),
+                                      child: TextFormField(
+                                        decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          prefixIcon:
+                                              Icon(Icons.lock_open_outlined),
+                                          labelText: 'Password',
+                                          suffixIcon: Icon(
+                                              Icons.remove_red_eye_outlined),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 7,
+                                    ),
+                                    Container(
+                                      alignment: Alignment.centerRight,
+                                      child: TextButton(
+                                        child: Text(
+                                          'Forgot password ?',
+                                          style: TextStyle(
+                                            fontSize: 18.sp,
+                                            color: Color(0xFF4E4E4E),
+                                          ),
+                                        ),
+                                        onPressed: () {},
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 19,
+                                    ),
+                                    Container(
+                                      width: 243.w,
+                                      height: 47,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                      ),
+                                      child: ElevatedButton(
+                                        style: ButtonStyle(
+                                          backgroundColor:
+                                              MaterialStateProperty.all(
+                                            Color(0xFF720707),
+                                          ),
+                                        ),
+                                        onPressed: () {},
+                                        child: Text(
+                                          'Login',
+                                          style: TextStyle(
+                                            fontSize: 21.sp,
+                                            fontFamily: 'Gilroy Bold',
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ))),
                         SizedBox(
                           height: 7,
                         ),
@@ -159,20 +174,24 @@ class LoginScreenEmailDesktop extends StatelessWidget {
                               color: Color(0xFF720707),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'Login with number');
+                          },
                         ),
-                        SizedBox(height: 19,),
-                        RichText(text: TextSpan(
+                        SizedBox(
+                          height: 19,
+                        ),
+                        RichText(
+                            text: TextSpan(
                           children: <TextSpan>[
                             TextSpan(
-                              text: 'Not a member yet ?',
-                              style: TextStyle(
-                                fontSize: 16.sp,
-                                fontFamily: 'Gilroy Medium',
-                              )
-                            ),
+                                text: 'Not a member yet ?',
+                                style: TextStyle(
+                                  fontSize: 16.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                )),
                             TextSpan(
-                              text: ' Get started',
+                                text: ' Get started',
                                 style: TextStyle(
                                   fontSize: 16.sp,
                                   fontFamily: 'Gilroy Bold',
@@ -180,20 +199,48 @@ class LoginScreenEmailDesktop extends StatelessWidget {
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    print('Terms of Service');
-                                  }
-                            ),
+                                    Navigator.pushNamed(context, 'Get started');
+                                  }),
                           ],
                         )),
-                        SizedBox(height: 84,),
+                        SizedBox(
+                          height: 84,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('English'),
+                            Text(
+                              'English',
+                              style: TextStyle(
+                                color: Color(0xFF590D0D),
+                                fontSize: 14.sp,
+                                fontFamily: 'Gilroy Medium',
+                              ),
+                            ),
                             Row(
                               children: [
-                                TextButton(child: Text('Privacy Policy'), onPressed: () {},),
-                                TextButton(child: Text('Cookies'), onPressed: () {},),
+                                TextButton(
+                                  child: Text(
+                                    'Privacy Policy',
+                                    style: TextStyle(
+                                      color: Color(0xFF590D0D),
+                                      fontSize: 14.sp,
+                                      fontFamily: 'Gilroy Medium',
+                                    ),
+                                  ),
+                                  onPressed: () {},
+                                ),
+                                TextButton(
+                                  child: Text(
+                                    'Cookies',
+                                    style: TextStyle(
+                                      color: Color(0xFF590D0D),
+                                      fontSize: 14.sp,
+                                      fontFamily: 'Gilroy Medium',
+                                    ),
+                                  ),
+                                  onPressed: () {},
+                                ),
                               ],
                             ),
                           ],

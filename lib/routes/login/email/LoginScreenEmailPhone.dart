@@ -75,104 +75,108 @@ class _LoginScreenEmailPhoneState extends State<LoginScreenEmailPhone> {
                   SizedBox(
                     height: 22,
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(horizontal: 17.w),
-                    height: 60,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(41),
-                        border: Border.all(color: Color(0xFF720707))),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          border: InputBorder.none, labelText: 'Email'),
-                      validator: (value) {
-                        if (value == null ||
-                            value.isEmpty ||
-                            value.length < 6) {
-                          return 'Please enter valid password';
-                        }
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.only(left: 17.w),
-                    height: 60,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(41),
-                        border: Border.all(color: Color(0xFF720707))),
-                    child: TextFormField(
-                      obscureText: !LoginScreenEmailPhone.isChecked,
-                      decoration: InputDecoration(
-                          suffixIcon: GestureDetector(
-                            child: LoginScreenEmailPhone.pwVisible
-                                ? Icon(Icons.visibility_off)
-                                : Icon(Icons.visibility),
-                            onTap: () {
-                              setState(() {
-                                if (LoginScreenEmailPhone.isChecked == false) {
-                                  LoginScreenEmailPhone.pwVisible = true;
-                                  LoginScreenEmailPhone.isChecked = true;
-                                } else {
-                                  LoginScreenEmailPhone.isChecked = false;
-                                  LoginScreenEmailPhone.pwVisible = false;
-                                }
-                              });
-                            },
-                          ),
-                          border: InputBorder.none,
-                          labelText: 'Password'),
-                      validator: (value) {
-                        if (value == null ||
-                            value.isEmpty ||
-                            value.length < 6) {
-                          return 'Please enter valid password';
-                        }
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    height: 3.h,
-                  ),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      'Forgot password ?',
-                      style: TextStyle(
-                          fontSize: 14.sp,
-                          fontFamily: 'Gilroy Medium',
-                          color: Color(0xFF4E4E4E)),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 25.h,
-                  ),
-                  Container(
-                    width: 286.w,
-                    height: 40.h,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Login',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18.sp,
-                            fontFamily: 'Gilroy Medium'),
+                  Builder(builder: (context) => Form(child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.symmetric(horizontal: 17.w),
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(41),
+                            border: Border.all(color: Color(0xFF720707))),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                              border: InputBorder.none, labelText: 'Email'),
+                          validator: (value) {
+                            if (value == null ||
+                                value.isEmpty ||
+                                value.length < 6) {
+                              return 'Please enter valid password';
+                            }
+                          },
+                        ),
                       ),
-                      style: ButtonStyle(
-                        shape:
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(left: 17.w),
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(41),
+                            border: Border.all(color: Color(0xFF720707))),
+                        child: TextFormField(
+                          obscureText: !LoginScreenEmailPhone.isChecked,
+                          decoration: InputDecoration(
+                              suffixIcon: GestureDetector(
+                                child: LoginScreenEmailPhone.pwVisible
+                                    ? Icon(Icons.visibility_off)
+                                    : Icon(Icons.visibility),
+                                onTap: () {
+                                  setState(() {
+                                    if (LoginScreenEmailPhone.isChecked == false) {
+                                      LoginScreenEmailPhone.pwVisible = true;
+                                      LoginScreenEmailPhone.isChecked = true;
+                                    } else {
+                                      LoginScreenEmailPhone.isChecked = false;
+                                      LoginScreenEmailPhone.pwVisible = false;
+                                    }
+                                  });
+                                },
+                              ),
+                              border: InputBorder.none,
+                              labelText: 'Password'),
+                          validator: (value) {
+                            if (value == null ||
+                                value.isEmpty ||
+                                value.length < 6) {
+                              return 'Please enter valid password';
+                            }
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          'Forgot password ?',
+                          style: TextStyle(
+                              fontSize: 14.sp,
+                              fontFamily: 'Gilroy Medium',
+                              color: Color(0xFF4E4E4E)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 25.h,
+                      ),
+                      Container(
+                        width: 286.w,
+                        height: 40.h,
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.sp,
+                                fontFamily: 'Gilroy Medium'),
+                          ),
+                          style: ButtonStyle(
+                            shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                        )),
-                        backgroundColor:
+                                  borderRadius: BorderRadius.circular(18.0),
+                                )),
+                            backgroundColor:
                             MaterialStateProperty.all(Color(0xFF720707)),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
+                    ],
+                  ))),
                   SizedBox(
                     height: 10.h,
                   ),
@@ -222,7 +226,9 @@ class _LoginScreenEmailPhoneState extends State<LoginScreenEmailPhone> {
                             fontSize: 16.sp,
                             fontFamily: 'Gilroy Bold',
                           ),
-                          recognizer: TapGestureRecognizer()..onTap = () {},
+                          recognizer: TapGestureRecognizer()..onTap = () {
+                            Navigator.pushNamed(context, 'Get started');
+                          },
                         ),
                       ])),
                 ],

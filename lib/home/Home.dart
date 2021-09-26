@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
       phone: Scaffold(
         drawer: MyDrawer(),
         resizeToAvoidBottomInset: false,
-        body: HomePhone(),
+        body: HomePhone(), // replace it with code vrf.
       ),
     );
   }

@@ -85,104 +85,118 @@ class _LoginWithNumberPhoneState extends State<LoginWithNumberPhone> {
                 SizedBox(
                   height: 22,
                 ),
-                IntlPhoneField(
-                  autoValidate: false,
-                  decoration: InputDecoration(
-                    labelText: 'Phone Number',
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(30.0)),
-                    ),
-                  ),
-                  initialCountryCode: 'DZ',
-                  validator: (value) {
-                    if (value!.trim().isEmpty) {
-                      return 'Enter a valid Phone number';
-                    }
-                    return null;
-                  },
-                  /*onSaved: (value) {
+                Builder(
+                    builder: (context) => Form(
+                            child: Column(
+                          children: [
+                            IntlPhoneField(
+                              autoValidate: false,
+                              decoration: InputDecoration(
+                                labelText: 'Phone Number',
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(30.0)),
+                                ),
+                              ),
+                              initialCountryCode: 'DZ',
+                              validator: (value) {
+                                if (value!.trim().isEmpty) {
+                                  return 'Enter a valid Phone number';
+                                }
+                                return null;
+                              },
+                              /*onSaved: (value) {
                       numPhoneController.text = value!.number!;
                       codeCountryController.text = value.countryCode!;
                     },*/
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.only(left: 17.w),
-                  height: 60.h,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(41),
-                      border: Border.all(color: Color(0xFF720707))),
-                  child: TextFormField(
-                    obscureText: !LoginScreenEmailPhone.isChecked,
-                    decoration: InputDecoration(
-                        suffixIcon: GestureDetector(
-                          child: LoginScreenEmailPhone.pwVisible
-                              ? Icon(Icons.visibility_off)
-                              : Icon(Icons.visibility),
-                          onTap: () {
-                            setState(() {
-                              if (LoginScreenEmailPhone.isChecked == false) {
-                                LoginScreenEmailPhone.pwVisible = true;
-                                LoginScreenEmailPhone.isChecked = true;
-                              } else {
-                                LoginScreenEmailPhone.isChecked = false;
-                                LoginScreenEmailPhone.pwVisible = false;
-                              }
-                            });
-                          },
-                        ),
-                        border: InputBorder.none,
-                        labelText: 'Password'),
-                    validator: (value) {
-                      if (value == null || value.isEmpty || value.length < 6) {
-                        return 'Please enter valid password';
-                      }
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 3.h,
-                ),
-                Container(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot password ?',
-                    style: TextStyle(
-                        fontSize: 14.sp,
-                        fontFamily: 'Gilroy Medium',
-                        color: Color(0xFF4E4E4E)),
-                  ),
-                ),
-                SizedBox(
-                  height: 25.h,
-                ),
-                Container(
-                  width: 286.w,
-                  height: 40.h,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.sp,
-                          fontFamily: 'Gilroy Medium'),
-                    ),
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                      )),
-                      backgroundColor:
-                          MaterialStateProperty.all(Color(0xFF720707)),
-                    ),
-                  ),
-                ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.only(left: 17.w),
+                              height: 60.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(41),
+                                  border: Border.all(color: Color(0xFF720707))),
+                              child: TextFormField(
+                                obscureText: !LoginScreenEmailPhone.isChecked,
+                                decoration: InputDecoration(
+                                    suffixIcon: GestureDetector(
+                                      child: LoginScreenEmailPhone.pwVisible
+                                          ? Icon(Icons.visibility_off)
+                                          : Icon(Icons.visibility),
+                                      onTap: () {
+                                        setState(() {
+                                          if (LoginScreenEmailPhone.isChecked ==
+                                              false) {
+                                            LoginScreenEmailPhone.pwVisible =
+                                                true;
+                                            LoginScreenEmailPhone.isChecked =
+                                                true;
+                                          } else {
+                                            LoginScreenEmailPhone.isChecked =
+                                                false;
+                                            LoginScreenEmailPhone.pwVisible =
+                                                false;
+                                          }
+                                        });
+                                      },
+                                    ),
+                                    border: InputBorder.none,
+                                    labelText: 'Password'),
+                                validator: (value) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      value.length < 6) {
+                                    return 'Please enter valid password';
+                                  }
+                                },
+                              ),
+                            ),
+                            SizedBox(
+                              height: 3.h,
+                            ),
+                            Container(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                'Forgot password ?',
+                                style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontFamily: 'Gilroy Medium',
+                                    color: Color(0xFF4E4E4E)),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 25.h,
+                            ),
+                            Container(
+                              width: 286.w,
+                              height: 40.h,
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  'Login',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18.sp,
+                                      fontFamily: 'Gilroy Medium'),
+                                ),
+                                style: ButtonStyle(
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                  )),
+                                  backgroundColor: MaterialStateProperty.all(
+                                      Color(0xFF720707)),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ))),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -213,7 +227,9 @@ class _LoginWithNumberPhoneState extends State<LoginWithNumberPhone> {
                         color: Color(0xFF720707),
                         fontSize: 23.sp),
                   ),
-                  onPressed: () {Navigator.pushNamed(context, 'Login');},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'Login');
+                  },
                 ),
                 RichText(
                     text: TextSpan(
@@ -232,7 +248,10 @@ class _LoginWithNumberPhoneState extends State<LoginWithNumberPhone> {
                           fontSize: 16.sp,
                           fontFamily: 'Gilroy Bold',
                         ),
-                        recognizer: TapGestureRecognizer()..onTap = () {},
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushNamed(context, 'Get started');
+                          },
                       ),
                     ])),
               ],
