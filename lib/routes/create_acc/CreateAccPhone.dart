@@ -213,7 +213,7 @@ class _CreateAccPhoneState extends State<CreateAccPhone> {
                                     width: 286.w,
                                     height: 38,
                                     child: TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {Navigator.pushNamed(context, 'Verification code');},
                                       child: Text(
                                         'Next',
                                         style: TextStyle(

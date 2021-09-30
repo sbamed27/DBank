@@ -143,7 +143,7 @@ class _CreateAccDesktopState extends State<CreateAccDesktop> {
                     borderRadius: BorderRadius.circular(9),
                   ),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {Navigator.pushNamed(context, 'Verification code');},
                     child: Text('Next'),
                     style: ElevatedButton.styleFrom(
                       onPrimary: Colors.white,
