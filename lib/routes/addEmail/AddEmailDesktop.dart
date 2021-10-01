@@ -3,22 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class VerificationCodeDesktop extends StatefulWidget {
-  @override
-  State<VerificationCodeDesktop> createState() =>
-      _VerificationCodeDesktopState();
-}
-
-class _VerificationCodeDesktopState extends State<VerificationCodeDesktop> {
+class AddEmailDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage('assets/background/untitled-1.png'),
-          fit: BoxFit.cover,
-        )),
+              image: AssetImage('assets/background/untitled-1.png'),
+              fit: BoxFit.cover,
+            )),
         child: Center(
           child: Container(
             width: 474.w,
@@ -51,7 +45,7 @@ class _VerificationCodeDesktopState extends State<VerificationCodeDesktop> {
                   height: 26,
                 ),
                 Text(
-                  'Verification Code',
+                  'Add an email if u want to!',
                   style: TextStyle(
                     fontSize: 34.8.sp,
                     fontFamily: 'Gilroy Bold',
@@ -59,31 +53,21 @@ class _VerificationCodeDesktopState extends State<VerificationCodeDesktop> {
                   ),
                 ),
                 SizedBox(
-                  height: 4,
+                  height: 28,
                 ),
-                Text(
-                  'Please type the verificatuin code sent to\n+213 610 10 10 19',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15.sp,
-                    fontFamily: 'Gilroy Bold',
-                    color: Color(0xFF590D0D),
+                Container(
+                  width: 369.w,
+                  child: Form(
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.email_outlined),
+                        labelText: 'Your email',
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 51,
-                ),
-                Container(
-                  width: 413.w,
-                  child: PinCodeTextField(
-                      appContext: context,
-                      length: 6,
-                      onChanged: (value) {
-                        setState(() {});
-                      }),
-                ),
-                SizedBox(
-                  height: 40,
                 ),
                 Container(
                   width: 369.w,
@@ -93,9 +77,9 @@ class _VerificationCodeDesktopState extends State<VerificationCodeDesktop> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, 'Add email');
+                      Navigator.pushNamed(context, 'Dashboard');
                     },
-                    child: Text('Next'),
+                    child: Text('Login'),
                     style: ElevatedButton.styleFrom(
                       onPrimary: Colors.white,
                       primary: Color(0xFF720707),
@@ -115,31 +99,31 @@ class _VerificationCodeDesktopState extends State<VerificationCodeDesktop> {
                               fontFamily: 'Gilroy Medium',
                               color: Color(0xFF686868)),
                           children: <TextSpan>[
-                        TextSpan(
-                          text: 'By clicking Next, you are in agreement of ',
-                        ),
-                        TextSpan(
-                            text: 'terms and conditions',
-                            style: TextStyle(
-                                fontFamily: 'Gilroy Bold',
-                                color: Color(0xFF686868)),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                print('Terms of Service');
-                              }),
-                        TextSpan(
-                          text: ' and you\'ve read our',
-                        ),
-                        TextSpan(
-                            text: ' privacy policy',
-                            style: TextStyle(
-                                fontFamily: 'Gilroy Bold',
-                                color: Color(0xFF686868)),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                print('Terms of Service');
-                              }),
-                      ])),
+                            TextSpan(
+                              text: 'By clicking Next, you are in agreement of ',
+                            ),
+                            TextSpan(
+                                text: 'terms and conditions',
+                                style: TextStyle(
+                                    fontFamily: 'Gilroy Bold',
+                                    color: Color(0xFF686868)),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    print('Terms of Service');
+                                  }),
+                            TextSpan(
+                              text: ' and you\'ve read our',
+                            ),
+                            TextSpan(
+                                text: ' privacy policy',
+                                style: TextStyle(
+                                    fontFamily: 'Gilroy Bold',
+                                    color: Color(0xFF686868)),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    print('Terms of Service');
+                                  }),
+                          ])),
                 ),
                 Spacer(),
                 Container(

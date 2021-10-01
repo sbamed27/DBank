@@ -3,14 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 
-class VerificationCodePhone extends StatefulWidget {
-  @override
-  State<VerificationCodePhone> createState() => _VerificationCodePhoneState();
-}
-
-class _VerificationCodePhoneState extends State<VerificationCodePhone> {
+class AddEmailPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +29,9 @@ class _VerificationCodePhoneState extends State<VerificationCodePhone> {
                       margin: EdgeInsets.only(top: 25),
                       alignment: Alignment.center,
                       child: TextButton.icon(
-                        onPressed: () {Navigator.pushNamed(context, 'Home');},
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'Home');
+                        },
                         icon: Image.asset(
                             'assets/phone/logo/gradient red-black (2).png'),
                         label: Text(
@@ -57,7 +53,7 @@ class _VerificationCodePhoneState extends State<VerificationCodePhone> {
               height: 13.4,
             ),
             Text(
-              'Verification Code',
+              'Add an email if u want to!',
               style: TextStyle(
                 fontSize: 25.sp,
                 fontFamily: 'Gilroy Bold',
@@ -65,28 +61,20 @@ class _VerificationCodePhoneState extends State<VerificationCodePhone> {
               ),
             ),
             SizedBox(
-              height: 58,
-            ),
-            Text(
-              'Please type the verification code sent to\n+213 610 10 10 19',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontFamily: 'Gilroy Bold',
-                color: Color(0xFF720707),
-              ),
+              height: 28,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 30.w),
-              child: PinCodeTextField(
-                  appContext: context,
-                  length: 6,
-                  onChanged: (value) {
-                    setState(() {});
-                  }),
+              width: 286.w,
+              child: Form(
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Your email',
+                  ),
+                ),
+              ),
             ),
             SizedBox(
-              height: 33,
+              height: 32,
             ), // Separated fields.
             Container(
               width: 286.w,
@@ -95,8 +83,8 @@ class _VerificationCodePhoneState extends State<VerificationCodePhone> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: ElevatedButton(
-                onPressed: () {Navigator.pushNamed(context, 'Add email');},
-                child: Text('Next'),
+                onPressed: () {Navigator.pushNamed(context, 'Dashboard');},
+                child: Text('Login'),
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Color(0xFF720707)),
                 ),

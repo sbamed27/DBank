@@ -1,3 +1,4 @@
+import 'package:debbah_bank_website/routes/addEmail/AddEmailResponsive.dart';
 import 'package:debbah_bank_website/routes/create_acc/CreateAccResponsive.dart';
 import 'package:debbah_bank_website/routes/login/email/LoginScreenEmailResponsive.dart';
 import 'package:debbah_bank_website/routes/login/number/LoginWithNumberResponsive.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Debbah Bank',
       debugShowCheckedModeBanner: false,
       routes: {
+        'Add email': (context) => AddEmailResponsive(),
         'Verification code': (context) => VerificationCodeResponsive(),
         'Login with number': (context) => LoginWithNumberResponsive(),
         'Login': (context) => LoginScreenEmailResponsive(),
