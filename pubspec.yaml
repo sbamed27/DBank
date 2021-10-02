@@ -33,6 +33,7 @@ dependencies:
   intl_phone_field: ^2.1.0
   store_redirect: ^2.0.0
   pin_code_fields: ^7.3.0
+  collapsible_sidebar: ^2.0.1+2
 
 dev_dependencies:
   flutter_test:
