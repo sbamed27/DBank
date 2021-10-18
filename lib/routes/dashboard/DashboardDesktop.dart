@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,10 +9,6 @@ class DashboardDesktop extends StatefulWidget {
   @override
   State<DashboardDesktop> createState() => _DashboardDesktopState();
 }
-
-/*
- Oussama's PhotoCopy
-  */
 
 class _DashboardDesktopState extends State<DashboardDesktop> {
   @override
@@ -616,31 +611,85 @@ class _DashboardDesktopState extends State<DashboardDesktop> {
                                   ),
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      TextButton(
-                                        child: Text('Mar'),
-                                        onPressed: () {},
+                                      Container(
+                                        width: 60.w,
+                                        child: TextButton(
+                                          child: Text(
+                                            'Mar',
+                                            style: TextStyle(
+                                              fontSize: 18.sp,
+                                              color: Color(0xFF7E7E7E),
+                                            ),
+                                          ),
+                                          onPressed: () {},
+                                        ),
                                       ),
-                                      TextButton(
-                                        child: Text('Apr'),
-                                        onPressed: () {},
+                                      Container(
+                                        width: 60.w,
+                                        child: TextButton(
+                                          child: Text(
+                                            'Apr',
+                                            style: TextStyle(
+                                              fontSize: 18.sp,
+                                              color: Color(0xFF7E7E7E),
+                                            ),
+                                          ),
+                                          onPressed: () {},
+                                        ),
                                       ),
-                                      TextButton(
-                                        child: Text('May'),
-                                        onPressed: () {},
+                                      Container(
+                                        width: 60.w,
+                                        child: TextButton(
+                                          child: Text(
+                                            'May',
+                                            style: TextStyle(
+                                              fontSize: 18.sp,
+                                              color: Color(0xFF7E7E7E),
+                                            ),
+                                          ),
+                                          onPressed: () {},
+                                        ),
                                       ),
-                                      TextButton(
-                                        child: Text('June'),
-                                        onPressed: () {},
+                                      Container(
+                                        width: 60.w,
+                                        child: TextButton(
+                                          child: Text(
+                                            'June',
+                                            style: TextStyle(
+                                              fontSize: 18.sp,
+                                              color: Color(0xFF7E7E7E),
+                                            ),
+                                          ),
+                                          onPressed: () {},
+                                        ),
                                       ),
-                                      TextButton(
-                                        child: Text('July'),
-                                        onPressed: () {},
+                                      Container(
+                                        width: 60.w,
+                                        child: TextButton(
+                                          child: Text(
+                                            'July',
+                                            style: TextStyle(
+                                              fontSize: 18.sp,
+                                              color: Color(0xFF7E7E7E),
+                                            ),
+                                          ),
+                                          onPressed: () {},
+                                        ),
                                       ),
-                                      TextButton(
-                                        child: Text('Aug'),
-                                        onPressed: () {},
+                                      Container(
+                                        width: 60.w,
+                                        child: TextButton(
+                                          child: Text(
+                                            'Aug',
+                                            style: TextStyle(
+                                              fontSize: 18.sp,
+                                              color: Color(0xFF7E7E7E),
+                                            ),
+                                          ),
+                                          onPressed: () {},
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -710,44 +759,92 @@ class _DashboardDesktopState extends State<DashboardDesktop> {
                       children: [
                         Column(
                           children: [
-                            Text('3602.35 €'),
-                            Text('Card balance'),
+                            Text('3602.35 €',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
+                            Text('Card balance',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
                           ],
                         ),
                         Column(
                           children: [
-                            Text('10000 €'),
-                            Text('Card limit'),
+                            Text('10000 €',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
+                            Text('Card limit',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
                           ],
                         ),
                       ],
                     ),
                     Column(
                       children: [
-                        Text(
-                          'Card Informations',
-                          style: TextStyle(
-                            fontSize: 28.sp,
-                            fontFamily: 'Gilroy Bold',
-                            color: Color(0xFF0E0E0E),
-                          ),
-                        ),
+                        Text('Card Informations',
+                            style: TextStyle(
+                              fontSize: 24.sp,
+                              fontFamily: 'Gilroy Medium',
+                              color: Color(0xFF0E0E0E),
+                            )),
                         Row(
                           children: [
-                            Text('Card number'),
-                            Text('4564 0000 0000 0000'),
+                            Text('Card number',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
+                            Text('4564 0000 0000 0000',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
                           ],
                         ),
                         Row(
                           children: [
-                            Text('Card type'),
-                            Text('VISA Card'),
+                            Text('Card type',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
+                            Text('VISA Card',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
                           ],
                         ),
                         Row(
                           children: [
-                            Text('Expiry Date'),
-                            Text('00/00'),
+                            Text('Expiry Date',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
+                            Text('00/00',
+                                style: TextStyle(
+                                  fontSize: 24.sp,
+                                  fontFamily: 'Gilroy Medium',
+                                  color: Color(0xFF0E0E0E),
+                                )),
                           ],
                         ),
                         Row(
@@ -780,7 +877,8 @@ class _DashboardDesktopState extends State<DashboardDesktop> {
                             onPressed: () {},
                             child: Text(
                               '+ New Transaction',
-                              style: TextStyle(color: Colors.white, fontSize: 26.sp),
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 26.sp),
                             ),
                           ),
                         ),

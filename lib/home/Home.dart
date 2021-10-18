@@ -1,6 +1,7 @@
 import 'package:debbah_bank_website/icons_dart_files/d_bank_icons.dart';
 import 'package:debbah_bank_website/routes/addEmail/AddEmailDesktop.dart';
 import 'package:debbah_bank_website/routes/dashboard/DashboardDesktop.dart';
+import 'package:debbah_bank_website/routes/dashboard/DashboardPhone.dart';
 import 'package:debbah_bank_website/routes/verification_code/VerificationCodeDesktop.dart';
 import 'package:debbah_bank_website/routes/verification_code/VerificationCodePhone.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,11 +41,12 @@ class Home extends StatelessWidget {
           ),
         ),
       ),*/
-      phone: Scaffold(
+      /*phone: Scaffold(
         drawer: MyDrawer(),
         resizeToAvoidBottomInset: false,
         body: HomePhone(), /*VerificationCodeDesktop(),*/
-      ),
+      ),*/
+      phone: DashboardPhone(),
     );
   }
 }
